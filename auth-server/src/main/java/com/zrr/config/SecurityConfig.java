@@ -46,7 +46,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .formLogin().permitAll()
                 // 配置Basic登录
-                .and().httpBasic()
+                //.and().httpBasic()
                 // 配置登出页面
                 .and().logout().logoutUrl("/logout").logoutSuccessUrl("/")
                 // 配置允许访问的链接

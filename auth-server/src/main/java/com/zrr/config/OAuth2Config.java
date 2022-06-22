@@ -43,6 +43,8 @@ public class OAuth2Config extends AuthorizationServerConfigurerAdapter {
     private static final String REFRESH_TOKEN = "refresh_token";
     //简化授权模式
     private static final String IMPLICIT = "implicit";
+    //客户端模式
+    private static final String CLIENT_CREDENTIALS = "client_credentials";
     //指定哪些资源是需要授权验证的
     private static final String RESOURCE_ID = "resource_id";
 
@@ -104,7 +106,7 @@ public class OAuth2Config extends AuthorizationServerConfigurerAdapter {
                 //令牌刷新时效
                 .refreshTokenValiditySeconds(FREFRESH_TOKEN_VALIDITY_SECONDS)
                 //授权模式
-                .authorizedGrantTypes(GRANT_TYPE_PASSWORD,AUTHORIZATION_CODE);
+                .authorizedGrantTypes(GRANT_TYPE_PASSWORD,AUTHORIZATION_CODE,REFRESH_TOKEN,CLIENT_CREDENTIALS);
     }
 
     @Bean
