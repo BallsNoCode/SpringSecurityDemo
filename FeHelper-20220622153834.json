@@ -1,0 +1,229 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "示例项目",
+        "description": "",
+        "version": "1.0.0"
+    },
+    "tags": [
+        {
+            "name": "SpringSecurity"
+        },
+        {
+            "name": "SpringSecurity/授权码授权"
+        },
+        {
+            "name": "SpringSecurity/客户端模式"
+        },
+        {
+            "name": "SpringSecurity/密码授权"
+        }
+    ],
+    "paths": {
+        "/oauth/authorize": {
+            "get": {
+                "summary": "Security",
+                "x-apifox-folder": "SpringSecurity/授权码授权",
+                "x-apifox-status": "developing",
+                "deprecated": false,
+                "description": "",
+                "tags": [
+                    "SpringSecurity/授权码授权"
+                ],
+                "parameters": [
+                    {
+                        "name": "client_id",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "example": "cms",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "client_secret",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "example": "secret",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "response_type",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "example": "code",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "成功",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {}
+                                },
+                                "examples": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/oauth/check_token": {
+            "get": {
+                "summary": "check_Token",
+                "x-apifox-folder": "SpringSecurity",
+                "x-apifox-status": "developing",
+                "deprecated": false,
+                "description": "",
+                "tags": [
+                    "SpringSecurity"
+                ],
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "example": "48b94c2f-2c32-4a3b-92c9-b600bbdf88ca",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "成功",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {}
+                                },
+                                "examples": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/cms/CurrentUser": {
+            "get": {
+                "summary": "userToken",
+                "x-apifox-folder": "SpringSecurity",
+                "x-apifox-status": "developing",
+                "deprecated": false,
+                "description": "",
+                "tags": [
+                    "SpringSecurity"
+                ],
+                "parameters": [
+                    {
+                        "name": "access_token",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "example": "a8032343-6813-484a-ac32-23b623cb28f0",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "成功",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {}
+                                },
+                                "examples": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/oauth/token": {
+            "post": {
+                "summary": "getToken",
+                "x-apifox-folder": "SpringSecurity/授权码授权",
+                "x-apifox-status": "developing",
+                "deprecated": false,
+                "description": "",
+                "tags": [
+                    "SpringSecurity/授权码授权"
+                ],
+                "parameters": [
+                    {
+                        "name": "code",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "example": "sFZgZ9",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "grant_type",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "example": "authorization_code",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "redirect_uri",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "example": "http://127.0.0.1:8084/cms/login",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "scope",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "example": "all",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "成功",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {}
+                                },
+                                "examples": {}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {}
+    }
+}
